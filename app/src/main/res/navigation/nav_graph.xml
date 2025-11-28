@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hikeListFragment">
+    <fragment
+        android:id="@+id/hikeListFragment"
+        android:name="com.example.hikingdiary.ui.hike_list.HikeListFragment"
+        android:label="Список походов">
+        <action
+            android:id="@+id/action_to_addHike"
+            app:destination="@id/addHikeFragment" />
+        <action
+            android:id="@+id/action_to_hikeDetail"
+            app:destination="@id/hikeDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addHikeFragment"
+        android:name="com.example.hikingdiary.ui.hike_add.AddHikeFragment"
+        android:label="Добавить поход"
+        tools:layout="@layout/fragment_add_hike" />
+
+    <fragment
+        android:id="@+id/hikeDetailFragment"
+        android:name="com.example.hikingdiary.ui.hike_detail.HikeDetailFragment"
+        android:label="Детали"
+        tools:layout="@layout/fragment_hike_detail" />
+</navigation>
