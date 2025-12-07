@@ -2,11 +2,13 @@ package com.example.hikingdiary.ui.hike_add
 
 import com.example.hikingdiary.R
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hikingdiary.data.models.Hike
@@ -21,6 +23,15 @@ class AddHikeFragment : Fragment() {
 
     private lateinit var repository: HikeRepository
     private val photos = mutableListOf<Photo>()
+
+    private val pickImageLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let {
+            photos.add(Photo(it.toString()))
+            Toast.makeText(requireContext(), "Фото добавлено", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,9 +73,9 @@ class AddHikeFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        // Добавление фото (пока просто заглушка)
+        // Добавление фото
         binding.btnPickPhoto.setOnClickListener {
-            Toast.makeText(requireContext(), "Добавление фото пока не реализовано", Toast.LENGTH_SHORT).show()
+            pickImageLauncher.launch("image/*")
         }
     }
 

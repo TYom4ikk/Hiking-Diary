@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.core.os.bundleOf
+
 import com.example.hikingdiary.data.repository.HikeRepository
 import com.example.hikingdiary.databinding.FragmentHikeListBinding
 import com.example.hikingdiary.R
@@ -35,9 +39,8 @@ class HikeListFragment : Fragment() {
         adapter = HikeListAdapter(
             items = repository.getAllHikes(),
             onClick = { hike ->
-                val action =
-                    HikeListFragmentDirections.actionToHikeDetail(hike.id)
-                findNavController().navigate(action)
+                val args = bundleOf("hikeId" to hike.id)
+                findNavController().navigate(R.id.action_to_hikeDetail, args)
             }
         )
 
@@ -46,6 +49,29 @@ class HikeListFragment : Fragment() {
 
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_to_addHike)
+        }
+
+        // Верхнее меню и exit
+        binding.ivMenu.setOnClickListener {
+            Toast.makeText(requireContext(), "Меню пока не реализовано", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.tvExit.setOnClickListener {
+            // Завершение приложения
+            activity?.finishAffinity()
+        }
+
+        // Нижняя навигация
+        binding.navFire.setOnClickListener {
+            findNavController().navigate(R.id.action_to_welcome)
+        }
+
+        binding.navList.setOnClickListener {
+            // Уже находимся в списке походов
+        }
+
+        binding.navProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_to_profile)
         }
     }
 

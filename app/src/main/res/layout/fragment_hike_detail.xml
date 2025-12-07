@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@color/background_dark">
 
     <LinearLayout
         android:orientation="vertical"
@@ -14,6 +15,7 @@
             android:text="Название похода"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/text_primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -22,6 +24,7 @@
             android:text="10.07.2024"
             android:layout_marginTop="6dp"
             android:textSize="16sp"
+            android:textColor="@color/text_secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -30,6 +33,7 @@
             android:text="Урал, гора Азов"
             android:layout_marginTop="6dp"
             android:textSize="16sp"
+            android:textColor="@color/text_secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -45,6 +49,7 @@
             android:text="Описание похода..."
             android:layout_marginTop="20dp"
             android:textSize="16sp"
+            android:textColor="@color/text_primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -53,7 +58,18 @@
             android:text="Удалить поход"
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/card_green"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnClose"
+            android:text="Закрыть"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/card_dark"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </ScrollView>

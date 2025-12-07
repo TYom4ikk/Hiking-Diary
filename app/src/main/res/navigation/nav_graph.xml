@@ -14,6 +14,12 @@
         <action
             android:id="@+id/action_to_hikeDetail"
             app:destination="@id/hikeDetailFragment" />
+        <action
+            android:id="@+id/action_to_welcome"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_to_profile"
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <fragment
@@ -27,4 +33,16 @@
         android:name="com.example.hikingdiary.ui.hike_detail.HikeDetailFragment"
         android:label="Детали"
         tools:layout="@layout/fragment_hike_detail" />
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.hikingdiary.ui.welcome.WelcomeFragment"
+        android:label="Приветствие"
+        tools:layout="@layout/fragment_welcome" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.hikingdiary.ui.profile.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

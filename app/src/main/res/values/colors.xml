@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Цвета для главного экрана дневника -->
+    <color name="background_dark">#172426</color>
+    <color name="card_green">#4CAF50</color>
+    <color name="card_dark">#243436</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
 </resources>
