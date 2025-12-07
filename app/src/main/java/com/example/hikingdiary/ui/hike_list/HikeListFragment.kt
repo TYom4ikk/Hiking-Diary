@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hikingdiary.data.repository.HikeRepository
 import com.example.hikingdiary.databinding.FragmentHikeListBinding
+import com.example.hikingdiary.R
 
 class HikeListFragment : Fragment() {
 
